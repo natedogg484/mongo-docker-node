@@ -1,0 +1,27 @@
+{
+  "name": "mongo-docker-node",
+  "version": "1.0.0",
+  "description": "small mongo-docker-node app",
+  "main": "app.js",
+  "dependencies": {
+    "db": "^1.1.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natedogg484/mongo-docker-node.git"
+  },
+  "keywords": [
+    "mongoDB",
+    "nodeJS",
+    "Docker"
+  ],
+  "author": "nate schmidt",
+  "license": "ISC"
+}
