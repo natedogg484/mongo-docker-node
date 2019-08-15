@@ -3,29 +3,21 @@ const mongoose = require('mongoose')
 const app = express();
 const router = express.Router();
 const db = require('./db');
+const forceUser = require('./routes/forceUsers')
+const htmlRoutes = require('./routes/html')
 
 
-const path = __dirname + '/public/';
+const path = __dirname + '/views/';
 const PORT = 8080;
-
-router.use(function (req, res, next) {
-    console.log('/', req.method);
-    next;
-})
-
-router.get('/', function(req, res) {
-    res.sendFile(path + 'index.html'); 
-});
-
-router.get('/', function(req, res) {
-    res.sendFile(path + 'forceUsers.html');
-});
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path));
-app.use('/', router);
+
+// app.use('/', router);
+app.use('./routes/html', htmlRoutes)
+app.use('/', forceUser)
 
 app.listen(PORT, function() {
     console.log(
